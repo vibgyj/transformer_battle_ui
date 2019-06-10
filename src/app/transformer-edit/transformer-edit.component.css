@@ -1,0 +1,9 @@
+.limited-width {
+    width: 47%;
+    margin: auto 3px;
+}
+
+.very-limited-width {
+    width: 23%;
+    margin: auto 3px;
+}

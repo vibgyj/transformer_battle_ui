@@ -1,0 +1,51 @@
+<div class="progress-container">
+  <mat-progress-bar mode="determinate" [value]="correctness"></mat-progress-bar>
+    <span class="progress-container_text">{{correctness}} % correct</span>
+    <span class="mat-caption">( You need more than 50 % right guesses to win! )</span>
+</div>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <div class="floaters-container">
+      <h2>Autobots</h2>
+
+      <div cdkDropList #autobotsList="cdkDropList" [cdkDropListData]="autobots"
+        [cdkDropListConnectedTo]="[winnersList, loosersList]" class="drop-list" (cdkDropListDropped)="drop($event)">
+        <div class="drop-box" *ngFor="let transformer of autobots" cdkDrag>
+          {{transformer.Name}}</div>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="floaters-container">
+      <h2>Winners</h2>
+
+      <div cdkDropList #winnersList="cdkDropList" [cdkDropListData]="winners" class="drop-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="drop-box" *ngFor="let transformer of winners" cdkDrag>
+          {{transformer.Name + "-" + transformer.Status}}</div>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="floaters-container">
+      <h2>Decepticons</h2>
+
+      <div cdkDropList #decepticonsList="cdkDropList" [cdkDropListData]="decepticons"
+        [cdkDropListConnectedTo]="[winnersList, loosersList]" class="drop-list" (cdkDropListDropped)="drop($event)">
+        <div class="drop-box" *ngFor="let transformer of decepticons" cdkDrag>
+          {{transformer.Name}}</div>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="floaters-container">
+      <h2>Loosers</h2>
+
+      <div cdkDropList #loosersList="cdkDropList" [cdkDropListData]="loosers" class="drop-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="drop-box" *ngFor="let transformer of loosers" cdkDrag>
+          {{transformer.Name + "-" + transformer.Status}}</div>
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
