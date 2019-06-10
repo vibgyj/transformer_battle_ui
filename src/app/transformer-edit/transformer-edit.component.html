@@ -35,7 +35,7 @@
     <input type="number" matInput placeholder="Skill" [(ngModel)]="transformer.skill">
   </mat-form-field>
 </div>
-<div class="actions-container">
+<div class="actions-container flex-container">
   <button mat-button [routerLink]="['/transformers']">Back</button>
-  <button mat-button color="primary" (click)="saveClicked()">Save</button>
+  <button mat-raised-button color="primary" (click)="saveClicked()">Save</button>
 </div>

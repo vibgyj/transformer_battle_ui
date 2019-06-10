@@ -1,14 +1,16 @@
-<button mat-button [routerLink]="['/transformer', undefined]">Add new Transformer</button>
+<div class="flex-container">
+  <button mat-raised-button [routerLink]="['/transformer', undefined]" color="primary">
+    <mat-icon matListIcon>playlist_add</mat-icon>
+    Add new Transformer
+  </button>
+</div>
 <mat-tab-group>
   <mat-tab label="Autobots">
     <mat-list>
       <mat-list-item *ngFor="let transformer of autobots">
         <img matListAvatar src="assets\autobot-logo.png" alt="autobot-logo">
         <h3 matLine> {{transformer.name}} </h3>
-        <p matLine>
-          <span> Rank - {{transformer.rank}} </span>
-          <span> Strength - {{transformer.strength}} </span>
-        </p>
+        <app-skills-display matLine [transformer]="transformer" xFactor="5"></app-skills-display>
         <button mat-icon-button (click)="editClicked(transformer)">
           <mat-icon matListIcon>edit</mat-icon>
         </button>
@@ -23,10 +25,7 @@
       <mat-list-item *ngFor="let transformer of decepticons">
         <img matListAvatar src="assets\decepticon-logo.png" alt="decepticon-logo">
         <h3 matLine> {{transformer.name}} </h3>
-        <p matLine>
-          <span> Rank - {{transformer.rank}} </span>
-          <span> Strength - {{transformer.strength}} </span>
-        </p>
+        <app-skills-display matLine [transformer]="transformer" xFactor="5"></app-skills-display>
         <button mat-icon-button (click)="editClicked(transformer)">
           <mat-icon matListIcon>edit</mat-icon>
         </button>

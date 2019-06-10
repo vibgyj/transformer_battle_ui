@@ -1,3 +1,11 @@
+.form-container {
+    margin: 10px 5px;
+}
+
+.actions-container button {
+    margin: 5px;
+}
+
 .limited-width {
     width: 47%;
     margin: auto 3px;

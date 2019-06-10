@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { MatDialogModule, MatButtonModule, MatListModule, MatToolbarModule, MatTabsModule, MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, MatGridListModule, MatProgressBarModule, MatIconModule } from '@angular/material';
+import { MatDialogModule, MatButtonModule, MatListModule, MatToolbarModule, MatTabsModule, MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, MatGridListModule, MatProgressBarModule, MatIconModule, MatTooltipModule } from '@angular/material';
 import { DragDropModule } from '@angular/cdk/drag-drop'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { AlertPopupComponent } from './alert-popup/alert-popup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UtilService } from './services/UtilService';
+import { SkillsDisplayComponent } from './skills-display/skills-display.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UtilService } from './services/UtilService';
     TransformersListComponent,
     TransformerEditComponent,
     RunSimulationComponent,
-    AlertPopupComponent
+    AlertPopupComponent,
+    SkillsDisplayComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -29,7 +31,7 @@ import { UtilService } from './services/UtilService';
     BrowserAnimationsModule,
     MatButtonModule, MatListModule, MatDialogModule, MatToolbarModule, MatTabsModule,
     MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, FormsModule,
-    MatGridListModule, MatProgressBarModule, MatIconModule,
+    MatGridListModule, MatProgressBarModule, MatIconModule, MatTooltipModule,
     DragDropModule
   ],
   entryComponents: [AlertPopupComponent],

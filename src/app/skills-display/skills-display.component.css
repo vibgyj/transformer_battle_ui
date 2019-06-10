@@ -1,0 +1,30 @@
+.display-bar {
+    width: 5px;
+    height: 10px;
+    display: inline-block;
+}
+
+.display-bar_rank {
+    background: black;
+}
+.display-bar_strength {
+    background: brown;
+}
+.display-bar_intelligence {
+    background: green;
+}
+.display-bar_speed {
+    background: orange;
+}
+.display-bar_endurance {
+    background: purple;
+}
+.display-bar_courage {
+    background: blue;
+}
+.display-bar_firepower {
+    background: red;
+}
+.display-bar_skill {
+    background: olive;
+}
