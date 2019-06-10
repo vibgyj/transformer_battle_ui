@@ -1,13 +1,13 @@
 export class Transformer {
-    Name: string;
-    Id: string;
-    Allegiance: string;
-    Strength: number;
-    Intelligence: number;
-    Speed: number;
-    Endurance: number;
-    Rank: number;
-    Courage: number;
-    Firepower: number;
-    Skill: number;
+    name: string;
+    id: string;
+    allegiance: string;
+    strength: number;
+    intelligence: number;
+    speed: number;
+    endurance: number;
+    rank: number;
+    courage: number;
+    firepower: number;
+    skill: number;
 }

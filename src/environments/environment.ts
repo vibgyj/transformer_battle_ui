@@ -1,4 +1,5 @@
 import { FakeTransformerService } from 'src/app/services/FakeTransformerService';
+import { ApiTransformerService } from 'src/app/services/ApiTransformerService';
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
@@ -6,7 +7,7 @@ import { FakeTransformerService } from 'src/app/services/FakeTransformerService'
 
 export const environment = {
   production: false,
-  transformerService: FakeTransformerService
+  transformerService: ApiTransformerService
 };
 
 /*

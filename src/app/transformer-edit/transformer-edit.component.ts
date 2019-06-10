@@ -19,7 +19,10 @@ export class TransformerEditComponent implements OnInit {
       data => {
         this.id = data["params"]["id"];
         if (this.id == undefined || this.id == "undefined") {
-          this.transformer = new Transformer();
+          this.transformer = {
+            name: "", id: undefined, allegiance: undefined, strength: 1, intelligence: 1, speed: 1,
+            endurance: 1, rank: 1, courage: 1, firepower: 1, skill: 1
+          };
         } else {
           this.transformerService.getTransformer(this.id).subscribe(
             data => {
@@ -28,12 +31,13 @@ export class TransformerEditComponent implements OnInit {
             error => console.log(error)
           );
         }
-      });
+      }
+    );
   }
 
   saveClicked() {
     console.log(this.transformer);
-    if (this.transformer.Id == undefined) {
+    if (this.transformer.id == undefined) {
       this.transformerService.addTransformer(this.transformer).subscribe(
         data => {
           //console.log(data);

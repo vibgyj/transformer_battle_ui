@@ -1,23 +1,28 @@
 import { ITransformerService } from './ITransformerService';
 import { Transformer } from '../models/transformer';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class ApiTransformerService implements ITransformerService {
+    constructor(private http: HttpClient) { }
+
     getTransformer(id: string) {
-        throw new Error("Method not implemented.");
+        return this.http.get("http://localhost:3456/transformers/" + id);
     }
     addTransformer(transformer: Transformer) {
-        throw new Error("Method not implemented.");
+        return this.http.post("http://localhost:3456/transformers", transformer);
     }
     updateTransformer(transformer: Transformer) {
-        throw new Error("Method not implemented.");
+        return this.http.put("http://localhost:3456/transformers/" + transformer.id, transformer);
     }
     deleteTransformer(id: string) {
-        throw new Error("Method not implemented.");
+        return this.http.delete("http://localhost:3456/transformers/" + id);
     }
     runSimulation() {
-        throw new Error("Method not implemented.");
+        return this.http.get("http://localhost:3456/war");
     }
     getTransformers(allegiance: string) {
-        throw new Error("Method not implemented.");
+        return this.http.get("http://localhost:3456/transformers/allegiance/" + allegiance);
     }    
 }

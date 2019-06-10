@@ -4,42 +4,36 @@
     <mat-list>
       <mat-list-item *ngFor="let transformer of autobots">
         <img matListAvatar src="assets\autobot-logo.png" alt="autobot-logo">
-        <h3 matLine> {{transformer.Name}} </h3>
+        <h3 matLine> {{transformer.name}} </h3>
         <p matLine>
-          <span> Rank - {{transformer.Rank}} </span>
-          <span> Strength - {{transformer.Strength}} </span>
+          <span> Rank - {{transformer.rank}} </span>
+          <span> Strength - {{transformer.strength}} </span>
         </p>
-        <a [routerLink]="['/transformer', transformer.Id]">
+        <button mat-icon-button (click)="editClicked(transformer)">
           <mat-icon matListIcon>edit</mat-icon>
-        </a>
-        <button mat-icon-button (click)="deleteClicked(transformer.Allegiance, transformer.Id)">
+        </button>
+        <button mat-icon-button (click)="deleteClicked(transformer.allegiance, transformer.id)">
           <mat-icon matListIcon>delete</mat-icon>
         </button>
       </mat-list-item>
     </mat-list>
-    <!-- <mat-action-list *ngFor="let transformer of autobots">
-      <a mat-list-item [routerLink]="['/transformer', transformer.Id]">{{transformer.Name}}</a>
-    </mat-action-list> -->
   </mat-tab>
   <mat-tab label="Decepticons">
     <mat-list>
       <mat-list-item *ngFor="let transformer of decepticons">
         <img matListAvatar src="assets\decepticon-logo.png" alt="decepticon-logo">
-        <h3 matLine> {{transformer.Name}} </h3>
+        <h3 matLine> {{transformer.name}} </h3>
         <p matLine>
-          <span> Rank - {{transformer.Rank}} </span>
-          <span> Strength - {{transformer.Strength}} </span>
+          <span> Rank - {{transformer.rank}} </span>
+          <span> Strength - {{transformer.strength}} </span>
         </p>
-        <a [routerLink]="['/transformer', transformer.Id]">
+        <button mat-icon-button (click)="editClicked(transformer)">
           <mat-icon matListIcon>edit</mat-icon>
-        </a>
-        <button mat-icon-button (click)="deleteClicked(transformer.Allegiance, transformer.Id)">
+        </button>
+        <button mat-icon-button (click)="deleteClicked(transformer.allegiance, transformer.id)">
           <mat-icon matListIcon>delete</mat-icon>
         </button>
       </mat-list-item>
     </mat-list>
-    <!-- <mat-action-list *ngFor="let transformer of decepticons">
-      <a mat-list-item [routerLink]="['/transformer', transformer.Id]">{{transformer.Name}}</a>
-    </mat-action-list> -->
   </mat-tab>
 </mat-tab-group>

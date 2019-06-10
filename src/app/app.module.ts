@@ -12,6 +12,8 @@ import { environment } from 'src/environments/environment';
 import { RunSimulationComponent } from './run-simulation/run-simulation.component';
 import { FormsModule } from '@angular/forms';
 import { AlertPopupComponent } from './alert-popup/alert-popup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UtilService } from './services/UtilService';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import { AlertPopupComponent } from './alert-popup/alert-popup.component';
     AlertPopupComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule, MatListModule, MatDialogModule, MatToolbarModule, MatTabsModule,
@@ -31,7 +33,7 @@ import { AlertPopupComponent } from './alert-popup/alert-popup.component';
     DragDropModule
   ],
   entryComponents: [AlertPopupComponent],
-  providers: [{ provide: 'ITransformerService', useClass: environment.transformerService }],
+  providers: [{ provide: 'ITransformerService', useClass: environment.transformerService }, UtilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
