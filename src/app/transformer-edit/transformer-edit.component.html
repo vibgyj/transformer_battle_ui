@@ -1,4 +1,4 @@
-<div class="form-container">
+<!-- <div class="form-container">
   <mat-form-field class="limited-width">
     <input type="text" matInput placeholder="Name" [(ngModel)]="transformer.name">
   </mat-form-field>
@@ -38,4 +38,86 @@
 <div class="actions-container flex-container">
   <button mat-button [routerLink]="['/transformers']">Back</button>
   <button mat-raised-button color="primary" (click)="saveClicked()">Save</button>
-</div>
+</div> -->
+<mat-card>
+  <mat-card-title>Edit Transformer</mat-card-title>
+  <form *ngIf="formDataLoaded" [formGroup]="transformerForm" (ngSubmit)="onFormSubmit(transformerForm.value)">
+    <mat-card-content>
+      <mat-form-field class="limited-width">
+        <input matInput type="text" placeholder="Name" formControlName="name" id="name">
+        <mat-hint>Not more than 40 characters long.</mat-hint>
+        <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+        <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 40 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field class="limited-width">
+        <mat-label>Allegiance</mat-label>
+        <mat-select formControlName="allegiance" id="allegiance">
+          <mat-option value="Autobot">Autobot </mat-option>
+          <mat-option value="Decepticon">Decepticon </mat-option>
+        </mat-select>
+        <mat-error *ngIf="hasError('allegiance', 'required')">Allegiance is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="very-limited-width">
+        <input type="number" matInput placeholder="Strength" formControlName="strength">
+        <mat-hint>Value between 1 - 10</mat-hint>
+        <mat-error *ngIf="hasError('strength', 'required')">Strength is required</mat-error>
+        <mat-error *ngIf="hasError('strength', 'min')">Value can't be less than 1</mat-error>
+        <mat-error *ngIf="hasError('strength', 'max')">Value can't be more than 10</mat-error>
+      </mat-form-field>
+      <mat-form-field class="very-limited-width">
+        <input type="number" matInput placeholder="Intelligence" formControlName="intelligence">
+        <mat-hint>Value between 1 - 10</mat-hint>
+        <mat-error *ngIf="hasError('intelligence', 'required')">Intelligence is required</mat-error>
+        <mat-error *ngIf="hasError('intelligence', 'min')">Value can't be less than 1</mat-error>
+        <mat-error *ngIf="hasError('intelligence', 'max')">Value can't be more than 10</mat-error>
+      </mat-form-field>
+      <mat-form-field class="very-limited-width">
+        <input type="number" matInput placeholder="Speed" formControlName="speed">
+        <mat-hint>Value between 1 - 10</mat-hint>
+        <mat-error *ngIf="hasError('speed', 'required')">Speed is required</mat-error>
+        <mat-error *ngIf="hasError('speed', 'min')">Value can't be less than 1</mat-error>
+        <mat-error *ngIf="hasError('speed', 'max')">Value can't be more than 10</mat-error>
+      </mat-form-field>
+      <mat-form-field class="very-limited-width">
+        <input type="number" matInput placeholder="Endurance" formControlName="endurance">
+        <mat-hint>Value between 1 - 10</mat-hint>
+        <mat-error *ngIf="hasError('endurance', 'required')">Endurance is required</mat-error>
+        <mat-error *ngIf="hasError('endurance', 'min')">Value can't be less than 1</mat-error>
+        <mat-error *ngIf="hasError('endurance', 'max')">Value can't be more than 10</mat-error>
+      </mat-form-field>
+      <mat-form-field class="very-limited-width">
+        <input type="number" matInput placeholder="Rank" formControlName="rank">
+        <mat-hint>Value between 1 - 10</mat-hint>
+        <mat-error *ngIf="hasError('rank', 'required')">Rank is required</mat-error>
+        <mat-error *ngIf="hasError('rank', 'min')">Value can't be less than 1</mat-error>
+        <mat-error *ngIf="hasError('rank', 'max')">Value can't be more than 10</mat-error>
+      </mat-form-field>
+      <mat-form-field class="very-limited-width">
+        <input type="number" matInput placeholder="Courage" formControlName="courage">
+        <mat-hint>Value between 1 - 10</mat-hint>
+        <mat-error *ngIf="hasError('courage', 'required')">Courage is required</mat-error>
+        <mat-error *ngIf="hasError('courage', 'min')">Value can't be less than 1</mat-error>
+        <mat-error *ngIf="hasError('courage', 'max')">Value can't be more than 10</mat-error>
+      </mat-form-field>
+      <mat-form-field class="very-limited-width">
+        <input type="number" matInput placeholder="Firepower" formControlName="firepower">
+        <mat-hint>Value between 1 - 10</mat-hint>
+        <mat-error *ngIf="hasError('firepower', 'required')">Firepower is required</mat-error>
+        <mat-error *ngIf="hasError('firepower', 'min')">Value can't be less than 1</mat-error>
+        <mat-error *ngIf="hasError('firepower', 'max')">Value can't be more than 10</mat-error>
+      </mat-form-field>
+      <mat-form-field class="very-limited-width">
+        <input type="number" matInput placeholder="Skill" formControlName="skill">
+        <mat-hint>Value between 1 - 10</mat-hint>
+        <mat-error *ngIf="hasError('skill', 'required')">Skill is required</mat-error>
+        <mat-error *ngIf="hasError('skill', 'min')">Value can't be less than 1</mat-error>
+        <mat-error *ngIf="hasError('skill', 'max')">Value can't be more than 10</mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [routerLink]="['/transformers']">Back</button>
+      <button mat-raised-button color="primary" [disabled]="!transformerForm.valid">Save</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

@@ -20,7 +20,6 @@ export class TransformersListComponent implements OnInit {
     this.transformerService.getTransformers('Autobot').subscribe(
       data => {
         this.autobots = data;
-        console.log(data);
       },
       error => console.log(error)
     );
